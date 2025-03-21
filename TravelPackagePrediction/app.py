@@ -1,3 +1,4 @@
+import os
 import streamlit as st
 import joblib
 import pickle
@@ -6,9 +7,21 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.preprocessing import MinMaxScaler
 
-# Load the trained SVM model
-model_path  = "svm_rbf_model.pkl"
-scaler_path = "svm_rbf_scaler_final.pkl"
+# Get absolute path to the script's directory
+base_path = os.path.dirname(os.path.abspath(__file__))
+
+# Define correct model paths
+model_path  = os.path.join(base_path, "svm_rbf_model.pkl")
+scaler_path = os.path.join(base_path, "svm_rbf_scaler_final.pkl")
+
+# Check if files exist before loading
+if not os.path.exists(model_path):
+    st.error(f"Model file not found: {model_path}")
+    st.stop()
+
+if not os.path.exists(scaler_path):
+    st.error(f"Scaler file not found: {scaler_path}")
+    st.stop()
 
 # Load the model
 model = joblib.load(model_path)
