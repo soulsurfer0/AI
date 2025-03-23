@@ -197,7 +197,7 @@ if st.sidebar.button("Predict"):
 st.markdown(
     """
     <div style="position: fixed; bottom: 10px; width: 100%; text-align: center; font-size: 14px; color: gray;">
-        © 2025 Robert Swetland | <a href="https://yourwebsite.com" target="_blank">Website</a> | <a href="https://github.com/soulsurfer0" target="_blank">GitHub</a>
+        © 2025 Robert Swetland | <a href="http://IFeedTheModels.com" target="_blank">Website</a> | <a href="https://github.com/soulsurfer0" target="_blank">GitHub</a>
     </div>
     """,
     unsafe_allow_html=True
